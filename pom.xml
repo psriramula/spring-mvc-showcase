@@ -231,7 +231,7 @@
 							<goal>wget</goal>
 						</goals>
 						<configuration>
-							     
+
 							<url>https://raw.githubusercontent.com/psriramula/cd-poc-app-config-${app.server.targetEnv}/master/spring-mvc-showcase/message.properties</url>
 							<outputFileName>message.properties</outputFileName>
 							<!-- default target location, just to demonstrate the parameter -->
