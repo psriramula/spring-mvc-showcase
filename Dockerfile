@@ -25,8 +25,7 @@ WORKDIR $METRICS_BEAT_HOME
 RUN set -x \
     && curl -fSL "$METRICS_BEAT_URL" -o metricbeat.tar.gz \
     && tar -xvf metricbeat.tar.gz --strip-components=1 \
-    && curl -fSL "$METRICS_BEAT_CONFIG_URL" -o $METRICS_BEAT_URL/metricbeat.yml \
-    && rm bin/*.bat \
+    && curl -fSL "$METRICS_BEAT_CONFIG_URL" -o $METRICS_BEAT_HOME/metricbeat.yml \
     && rm metricbeat.tar.gz*
 #./heartbeat -e -c heartbeat.yml -d "publish"
 CMD ["./metricbeat", "-e -c heartbeat.yml -d publish"]
