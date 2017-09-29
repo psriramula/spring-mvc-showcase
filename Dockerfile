@@ -28,7 +28,7 @@ RUN set -x \
     && curl -fSL "$METRICS_BEAT_CONFIG_URL" -o $METRICS_BEAT_HOME/metricbeat/metricbeat.yml \
     && rm metricbeat.deb*
 #./heartbeat -e -c heartbeat.yml -d "publish"
-CMD ["./bin/metricbeat", "-e -c heartbeat.yml -d publish"]
+CMD ['./bin/metricbeat', '-e', '-c', 'heartbeat.yml', '-d', '"publish"']
 
 WORKDIR $CATALINA_HOME
 
