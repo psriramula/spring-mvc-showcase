@@ -26,7 +26,7 @@ RUN set -x \
     && curl -fSL "$METRICS_BEAT_URL" -o metricbeat.deb \
     && dpkg -i metricbeat.deb \
     && curl -fSL "$METRICS_BEAT_CONFIG_URL" -o $METRICS_BEAT_HOME/metricbeat/metricbeat.yml \
-    && rm metricbeat.tar.gz*
+    && rm metricbeat.deb*
 #./heartbeat -e -c heartbeat.yml -d "publish"
 CMD ["./bin/metricbeat", "-e -c heartbeat.yml -d publish"]
 
